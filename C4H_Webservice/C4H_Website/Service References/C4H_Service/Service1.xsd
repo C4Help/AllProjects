@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/C4H_Webservice.Structure" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/C4H_Webservice.Structure" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/C4H_Webservice/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfServiceType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServiceType" nillable="true" type="tns:ServiceType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServiceType" nillable="true" type="tns:ArrayOfServiceType" />
+  <xs:complexType name="ServiceType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceType" nillable="true" type="tns:ServiceType" />
+  <xs:complexType name="ArrayOfService">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Service" nillable="true" type="tns:Service" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfService" nillable="true" type="tns:ArrayOfService" />
+  <xs:complexType name="Service">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="tns:ServiceType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Service" nillable="true" type="tns:Service" />
+  <xs:complexType name="ArrayOfUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Address2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FullName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Province" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Role" type="tns:UserRole" />
+      <xs:element minOccurs="0" name="UserID" type="xs:int" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Website" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:simpleType name="UserRole">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Government">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Charity">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Donor">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UserRole" nillable="true" type="tns:UserRole" />
+  <xs:complexType name="DonorProfile">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:User">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BirthYear" type="xs:int" />
+          <xs:element minOccurs="0" name="Gender" type="tns:UserGender" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DonorProfile" nillable="true" type="tns:DonorProfile" />
+  <xs:simpleType name="UserGender">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Male">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Female">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="UserGender" nillable="true" type="tns:UserGender" />
+  <xs:complexType name="CharityProfile">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:User">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Category" nillable="true" type="tns:CharityCategory" />
+          <xs:element minOccurs="0" name="Countries" nillable="true" type="tns:ArrayOfCharityActivityCountry" />
+          <xs:element minOccurs="0" name="Designation" nillable="true" type="tns:CharityDesignation" />
+          <xs:element minOccurs="0" name="Programs" nillable="true" type="tns:ArrayOfCharityProgram" />
+          <xs:element minOccurs="0" name="RegNumber" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CharityProfile" nillable="true" type="tns:CharityProfile" />
+  <xs:complexType name="CharityCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CharityCategory" nillable="true" type="tns:CharityCategory" />
+  <xs:complexType name="ArrayOfCharityActivityCountry">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CharityActivityCountry" nillable="true" type="tns:CharityActivityCountry" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCharityActivityCountry" nillable="true" type="tns:ArrayOfCharityActivityCountry" />
+  <xs:complexType name="CharityActivityCountry">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CharityActivityCountry" nillable="true" type="tns:CharityActivityCountry" />
+  <xs:complexType name="CharityDesignation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CharityDesignation" nillable="true" type="tns:CharityDesignation" />
+  <xs:complexType name="ArrayOfCharityProgram">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CharityProgram" nillable="true" type="tns:CharityProgram" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCharityProgram" nillable="true" type="tns:ArrayOfCharityProgram" />
+  <xs:complexType name="CharityProgram">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CharityProgram" nillable="true" type="tns:CharityProgram" />
+  <xs:complexType name="ArrayOfCharityDesignation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CharityDesignation" nillable="true" type="tns:CharityDesignation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCharityDesignation" nillable="true" type="tns:ArrayOfCharityDesignation" />
+  <xs:complexType name="ArrayOfCharityCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CharityCategory" nillable="true" type="tns:CharityCategory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCharityCategory" nillable="true" type="tns:ArrayOfCharityCategory" />
+  <xs:complexType name="ArrayOfCharityProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CharityProfile" nillable="true" type="tns:CharityProfile" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCharityProfile" nillable="true" type="tns:ArrayOfCharityProfile" />
+</xs:schema>

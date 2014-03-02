@@ -1,0 +1,53 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Connect4Help.Pages.Search.SearchPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <shell:SystemTray.ProgressIndicator>
+        <shell:ProgressIndicator IsIndeterminate="true" IsVisible="True" Text="Searching ..." />
+    </shell:SystemTray.ProgressIndicator>
+    
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid HorizontalAlignment="Stretch" Height="13" Margin="0,0" VerticalAlignment="Top" Background="#FFEBEBEB"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="29,22,0,0" 
+                   TextWrapping="Wrap" Text="SEARCH" VerticalAlignment="Top"
+                   Foreground="Black" Width="355" FontSize="50"/>
+
+        <Grid Margin="20,80,20,0" VerticalAlignment="Top" >
+            <Image Margin="20,12,0,0"  Width="25" Source="/Assets/search.png" HorizontalAlignment="Left" />
+
+            <TextBox x:Name="Search_Textbox" VerticalAlignment="Top" HorizontalAlignment="Stretch" Text="" FontSize="20" 
+                             Padding="40,0,0,0" BorderBrush="#BFC6C6C6" Foreground="#FF636363"
+                             Margin="0,10,0,0"/>
+        </Grid>
+        
+        <CheckBox x:Name="StrongSearch_Checkbox" IsChecked="true" Content="Strong Search" HorizontalAlignment="Left" Margin="20,140,0,0" VerticalAlignment="Top" Foreground="Black" BorderBrush="#FFDBD5D5"  Background="#FFDB7D3A"/>
+
+        <Button x:Name="Search_Button" Content="Search" HorizontalAlignment="Stretch"
+                        Margin="20,200,20,0" VerticalAlignment="Top" BorderBrush="#FF6F6D6D" Foreground="#FFFEB507" Click="Search_Button_Click" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF9283FF" Offset="0"/>
+                    <GradientStop Color="#FF6128E3" Offset="0.552"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBlock x:Name="Error_label" HorizontalAlignment="Left" Margin="29,280,29,0" TextWrapping="Wrap" 
+                   Text="Error Message" 
+                   VerticalAlignment="Top" Foreground="Red" FontSize="24"/>
+
+    </Grid>
+
+</phone:PhoneApplicationPage>

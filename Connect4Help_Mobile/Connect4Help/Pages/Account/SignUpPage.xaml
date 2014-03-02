@@ -1,0 +1,215 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Connect4Help.Pages.Account.SignUpPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Image HorizontalAlignment="Left" Height="68" Margin="168,0,0,0" VerticalAlignment="Top" Width="203" Source="/Assets/Logos/logo3.png" Stretch="Fill"/>
+        <TextBlock Text="Sign Up for " Style="{StaticResource PhoneTextNormalStyle}" Margin="15,15,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="Black"  FontSize="26"/>
+        
+        <phone:Panorama HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="0,80,0,0">
+
+            <!-- Account information -->
+            <phone:PanoramaItem CacheMode="{x:Null}"  Foreground="Black" Background="White" Header="ACCOUNT" >
+                <phone:PanoramaItem.RenderTransform>
+                    <TranslateTransform/>
+                </phone:PanoramaItem.RenderTransform>
+                <Grid Margin="0,-122,0,0">
+                    <Grid Margin="20,100,20,0" VerticalAlignment="Top" >
+                        <TextBlock Text="Username" Padding="16,0,0,0" FontSize="24" />
+                        <TextBox x:Name="username_textbox"  VerticalAlignment="Top" HorizontalAlignment="Stretch" Text="" FontSize="20" 
+                             Padding="40,0,0,0" BorderBrush="#BFC6C6C6" Foreground="#000000"
+                             Margin="0,25,0,0"/>
+                    </Grid>
+                    <Grid Margin="20,210,20,0" VerticalAlignment="Top" >
+                        <TextBlock Text="Password" Padding="16,0,0,0" FontSize="24" />
+                        <TextBox x:Name="password_textbox" VerticalAlignment="Top" HorizontalAlignment="Stretch" Text="" FontSize="20" 
+                             Padding="40,0,0,0" BorderBrush="#BFC6C6C6" Foreground="#000000"
+                             Margin="0,25,0,0"/>
+                    </Grid>
+                </Grid>
+            </phone:PanoramaItem>
+
+            <!-- Basic information -->
+            <phone:PanoramaItem CacheMode="{x:Null}"  Foreground="Black" Background="White" Header="BASIC INFO" >
+                <phone:PanoramaItem.RenderTransform>
+                    <TranslateTransform/>
+                </phone:PanoramaItem.RenderTransform>
+                <Grid Margin="0,-122,0,0">
+                    <Grid Margin="20,100,20,0" VerticalAlignment="Top" >
+                        <TextBlock Text="Full name" Padding="16,0,0,0" FontSize="24" />
+                        <TextBox x:Name="fullname_textbox"  VerticalAlignment="Top" HorizontalAlignment="Stretch" Text="" FontSize="20" 
+                             Padding="40,0,0,0" BorderBrush="#BFC6C6C6" Foreground="#000000"
+                             Margin="0,25,0,0"/>
+                    </Grid>
+                    <Grid Margin="20,210,20,0" VerticalAlignment="Top" >
+                        <TextBlock Text="Birth year" Padding="16,0,0,0" FontSize="24" />
+                        <TextBox x:Name="birthyear_textbox" VerticalAlignment="Top" HorizontalAlignment="Stretch" Text="" FontSize="20" 
+                             Padding="40,0,0,0" BorderBrush="#BFC6C6C6" Foreground="#000000"
+                             Margin="0,25,0,0"/>
+                    </Grid>
+                    <Grid Margin="20,320,20,0" VerticalAlignment="Top" >
+                        <TextBlock Text="Gender" Padding="16,0,0,0" FontSize="24" />
+                        <RadioButton x:Name="male_gender_radiobutton" VerticalAlignment="Top" FontSize="20" Padding="0,0,0,0" Content="Male"
+                                     BorderBrush="#BFC6C6C6" Foreground="#000000" Margin="40,30,0,0" IsChecked="true" />
+                        <RadioButton VerticalAlignment="Top" FontSize="20" Padding="0,0,0,0" Content="Female"
+                                     BorderBrush="#BFC6C6C6" Foreground="#000000" Margin="170,30,0,0" />
+                    </Grid>
+                </Grid>
+            </phone:PanoramaItem>
+
+            <!-- Contact information -->
+            <phone:PanoramaItem CacheMode="{x:Null}"  Foreground="Black" Background="White" Header="CONTACT INFO" >
+                <phone:PanoramaItem.RenderTransform>
+                    <TranslateTransform/>
+                </phone:PanoramaItem.RenderTransform>
+                <Grid Margin="0,-122,0,0">
+                    <Grid Margin="20,100,20,0" VerticalAlignment="Top" >
+                        <TextBlock Text="Email" Padding="16,0,0,0" FontSize="24" />
+                        <TextBox x:Name="email_textbox" VerticalAlignment="Top" HorizontalAlignment="Stretch" Text="" FontSize="20" 
+                             Padding="40,0,0,0" BorderBrush="#BFC6C6C6" Foreground="#000000"
+                             Margin="0,25,0,0"/>
+                    </Grid>
+                    <Grid Margin="20,210,20,0" VerticalAlignment="Top" >
+                        <TextBlock Text="Phone" Padding="16,0,0,0" FontSize="24" />
+                        <TextBox x:Name="phone_textbox"  VerticalAlignment="Top" HorizontalAlignment="Stretch" Text="" FontSize="20" 
+                             Padding="40,0,0,0" BorderBrush="#BFC6C6C6" Foreground="#000000"
+                             Margin="0,25,0,0"/>
+                    </Grid>
+                    <Grid Margin="20,320,20,0" VerticalAlignment="Top" >
+                        <TextBlock Text="Website" Padding="16,0,0,0" FontSize="24" />
+                        <TextBox x:Name="website_textbox" VerticalAlignment="Top" HorizontalAlignment="Stretch" Text="" FontSize="20" 
+                             Padding="40,0,0,0" BorderBrush="#BFC6C6C6" Foreground="#000000"
+                             Margin="0,25,0,0"/>
+                    </Grid>
+                </Grid>
+            </phone:PanoramaItem>
+
+            <!-- Address information -->
+            <phone:PanoramaItem CacheMode="{x:Null}"  Foreground="Black" Background="White" Header="ADDRESS" >
+                <phone:PanoramaItem.RenderTransform>
+                    <TranslateTransform/>
+                </phone:PanoramaItem.RenderTransform>
+                <Grid Margin="0,-122,0,0">
+                    <Grid Margin="20,100,20,0" VerticalAlignment="Top" >
+                        <TextBlock Text="Province" Padding="16,0,0,0" FontSize="24" />
+                        <TextBox x:Name="province_textbox" VerticalAlignment="Top" HorizontalAlignment="Stretch" Text="" FontSize="20" 
+                             Padding="40,0,0,0" BorderBrush="#BFC6C6C6" Foreground="#000000"
+                             Margin="0,25,0,0"/>
+                    </Grid>
+                    <Grid Margin="20,210,20,0" VerticalAlignment="Top" >
+                        <TextBlock Text="City" Padding="16,0,0,0" FontSize="24" />
+                        <TextBox  x:Name="city_textbox"   VerticalAlignment="Top" HorizontalAlignment="Stretch" Text="" FontSize="20" 
+                             Padding="40,0,0,0" BorderBrush="#BFC6C6C6" Foreground="#000000"
+                             Margin="0,25,0,0"/>
+                    </Grid>
+                    <Grid Margin="20,320,20,0" VerticalAlignment="Top" >
+                        <TextBlock Text="Address 1" Padding="16,0,0,0" FontSize="24" />
+                        <TextBox x:Name="address1_textbox"  VerticalAlignment="Top" HorizontalAlignment="Stretch" Text="" FontSize="20" 
+                             Padding="40,0,0,0" BorderBrush="#BFC6C6C6" Foreground="#000000"
+                             Margin="0,25,0,0"/>
+                    </Grid>
+                    <Grid Margin="20,430,20,0" VerticalAlignment="Top" >
+                        <TextBlock Text="Address 2" Padding="16,0,0,0" FontSize="24" />
+                        <TextBox x:Name="address2_textbox" VerticalAlignment="Top" HorizontalAlignment="Stretch" Text="" FontSize="20" 
+                             Padding="40,0,0,0" BorderBrush="#BFC6C6C6" Foreground="#000000"
+                             Margin="0,25,0,0"/>
+                    </Grid>
+                    <Grid Margin="20,540,20,0" VerticalAlignment="Top" >
+                        <TextBlock Text="Postal Code" Padding="16,0,0,0" FontSize="24" />
+                        <TextBox x:Name="postalcode_textbox" VerticalAlignment="Top" HorizontalAlignment="Stretch" Text="" FontSize="20" 
+                             Padding="40,0,0,0" BorderBrush="#BFC6C6C6" Foreground="#000000"
+                             Margin="0,25,0,0"/>
+                    </Grid>
+                </Grid>
+            </phone:PanoramaItem>
+
+            <!-- Services -->
+            <phone:PanoramaItem CacheMode="{x:Null}" Foreground="Black" Background="White" Header="SERVICES" >
+                <phone:PanoramaItem.RenderTransform>
+                    <TranslateTransform/>
+                </phone:PanoramaItem.RenderTransform>
+                <Grid Margin="0,-122,0,0">
+
+                    <TextBlock x:Name="services_Error_Label" HorizontalAlignment="Left" Margin="29,110,29,0" TextWrapping="Wrap" 
+                       Text="Error Message" 
+                       VerticalAlignment="Top" Foreground="Red" FontSize="24" Visibility="Collapsed"/>
+
+                    <phone:LongListSelector Foreground="Black" x:Name="services_listselector" 
+                                            HorizontalAlignment="Stretch"
+                                            VerticalAlignment="Top" Tap="Panorama_Tap"
+                                            Margin="10,90,10,0"  >
+
+                        <phone:LongListSelector.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Margin="20,0,0,25">
+                                    <TextBlock TextWrapping="Wrap" d:LayoutOverrides="Width, Height" Margin="0,0,0,0" 
+                                               Style="{StaticResource PhoneTextLargeStyle}" 
+                                               Text="{Binding Name}" FontSize="30"
+                                               Foreground="Black"/>
+                                    <TextBlock TextWrapping="Wrap" d:LayoutOverrides="Width, Height" Margin="0,0,0,0" 
+                                               Style="{StaticResource PhoneTextLargeStyle}" 
+                                               Text="{Binding Type}" FontSize="18"
+                                               Foreground="Gray"/>
+                                    <HyperlinkButton Foreground="Blue" Content="Add" 
+                                             Visibility="{Binding AddToListVisibility}" 
+                                            FontSize="18"
+                                             HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                                    <TextBlock Foreground="DarkGreen" Text="Remove" 
+                                            FontSize="22"
+                                             Visibility="{Binding RemoveFromListVisibility}" 
+                                             HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </phone:LongListSelector.ItemTemplate>
+
+                    </phone:LongListSelector>
+
+                </Grid>
+            </phone:PanoramaItem>
+
+            <!-- Confirm -->
+            <phone:PanoramaItem CacheMode="{x:Null}"  Foreground="Black" Background="White" Header="CONFIRM" >
+                <phone:PanoramaItem.RenderTransform>
+                    <TranslateTransform/>
+                </phone:PanoramaItem.RenderTransform>
+                <Grid Margin="0,-122,0,0">
+
+                    <CheckBox x:Name="Accept_Checkbox" Content="Accept Agreement" HorizontalAlignment="Left"
+                              Margin="15,100,0,0" VerticalAlignment="Top" Foreground="Black" BorderBrush="#FFDBD5D5" 
+                              Background="#FFDB7D3A"/>
+
+
+                    <Button x:Name="Submit_Button" Content="Create" HorizontalAlignment="Stretch" 
+                        Margin="20,170,20,0" VerticalAlignment="Top" BorderBrush="#FF6F6D6D" Foreground="#FFFEB507" Click="Submit_Button_Click" >
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF9283FF" Offset="0"/>
+                                <GradientStop Color="#FF6128E3" Offset="0.552"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <TextBlock x:Name="Error_label" HorizontalAlignment="Left" Margin="29,240,29,0" TextWrapping="Wrap" 
+                   Text="Error Message"  Visibility="Collapsed"
+                   VerticalAlignment="Top" Foreground="Red" FontSize="24"/>
+                </Grid>
+            </phone:PanoramaItem>
+            
+        </phone:Panorama>
+
+    </Grid>
+</phone:PhoneApplicationPage>
+
+
+

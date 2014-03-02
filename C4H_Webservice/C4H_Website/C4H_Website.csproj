@@ -1,0 +1,913 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{443EFDCF-50C1-4419-B27D-9E83C4D77120}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>C4H_Website</RootNamespace>
+    <AssemblyName>C4H_Website</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\C4H_Service\C4H_Website.C4H_Service.CharityCategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\C4H_Service\C4H_Website.C4H_Service.CharityDesignation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\C4H_Service\C4H_Website.C4H_Service.CharityProfile.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\C4H_Service\C4H_Website.C4H_Service.DonorProfile.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\C4H_Service\C4H_Website.C4H_Service.Service.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\C4H_Service\C4H_Website.C4H_Service.ServiceType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\C4H_Service\C4H_Website.C4H_Service.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\C4H_Service\Service.disco" />
+    <None Include="Service References\C4H_Service\configuration91.svcinfo" />
+    <None Include="Service References\C4H_Service\configuration.svcinfo" />
+    <None Include="Service References\C4H_Service\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="ContactUs.aspx" />
+    <Content Include="Pages\SearchCharities\CharityProfilePage.aspx" />
+    <Content Include="Pages\SearchCharities\Default.aspx" />
+    <Content Include="template\assets\css\custom.css" />
+    <Content Include="template\assets\css\pages\gallery.css" />
+    <Content Include="template\assets\css\pages\page404.css" />
+    <Content Include="template\assets\css\pages\page500.css" />
+    <Content Include="template\assets\css\pages\portfolio.css" />
+    <Content Include="template\assets\css\pages\prices.css" />
+    <Content Include="template\assets\css\pages\search-page-results.css" />
+    <Content Include="template\assets\css\style-metronic.css" />
+    <Content Include="template\assets\css\style-responsive.css" />
+    <Content Include="template\assets\css\style.css" />
+    <Content Include="template\assets\css\themes\blue.css" />
+    <Content Include="template\assets\css\themes\green.css" />
+    <Content Include="template\assets\css\themes\orange.css" />
+    <Content Include="template\assets\css\themes\red.css" />
+    <Content Include="template\assets\fonts\font.css" />
+    <Content Include="template\assets\img\arrow-testimonials.png" />
+    <Content Include="template\assets\img\bg\1.jpg" />
+    <Content Include="template\assets\img\black-opacity.png" />
+    <Content Include="template\assets\img\careers\careers.jpg" />
+    <Content Include="template\assets\img\clients\client_1.png" />
+    <Content Include="template\assets\img\clients\client_1_gray.png" />
+    <Content Include="template\assets\img\clients\client_2.png" />
+    <Content Include="template\assets\img\clients\client_2_gray.png" />
+    <Content Include="template\assets\img\clients\client_3.png" />
+    <Content Include="template\assets\img\clients\client_3_gray.png" />
+    <Content Include="template\assets\img\clients\client_4.png" />
+    <Content Include="template\assets\img\clients\client_4_gray.png" />
+    <Content Include="template\assets\img\clients\client_5.png" />
+    <Content Include="template\assets\img\clients\client_5_gray.png" />
+    <Content Include="template\assets\img\clients\client_6.png" />
+    <Content Include="template\assets\img\clients\client_6_gray.png" />
+    <Content Include="template\assets\img\clients\client_7.png" />
+    <Content Include="template\assets\img\clients\client_7_gray.png" />
+    <Content Include="template\assets\img\clients\client_8.png" />
+    <Content Include="template\assets\img\clients\client_8_gray.png" />
+    <Content Include="template\assets\img\corners.png" />
+    <Content Include="template\assets\img\icon-color-close.png" />
+    <Content Include="template\assets\img\icon-color.png" />
+    <Content Include="template\assets\img\icons\close-hover.png" />
+    <Content Include="template\assets\img\icons\close.png" />
+    <Content Include="template\assets\img\icons\left-hover.png" />
+    <Content Include="template\assets\img\icons\left.png" />
+    <Content Include="template\assets\img\icons\right-hover.png" />
+    <Content Include="template\assets\img\icons\right.png" />
+    <Content Include="template\assets\img\icons\social\aboutme.png" />
+    <Content Include="template\assets\img\icons\social\amazon.png" />
+    <Content Include="template\assets\img\icons\social\behance.png" />
+    <Content Include="template\assets\img\icons\social\blogger.png" />
+    <Content Include="template\assets\img\icons\social\deviantart.png" />
+    <Content Include="template\assets\img\icons\social\dribbble.png" />
+    <Content Include="template\assets\img\icons\social\dropbox.png" />
+    <Content Include="template\assets\img\icons\social\evernote.png" />
+    <Content Include="template\assets\img\icons\social\facebook.png" />
+    <Content Include="template\assets\img\icons\social\flickr.png" />
+    <Content Include="template\assets\img\icons\social\forrst.png" />
+    <Content Include="template\assets\img\icons\social\foursquare.png" />
+    <Content Include="template\assets\img\icons\social\github.png" />
+    <Content Include="template\assets\img\icons\social\googleplus.png" />
+    <Content Include="template\assets\img\icons\social\gravatar.png" />
+    <Content Include="template\assets\img\icons\social\instagram.png" />
+    <Content Include="template\assets\img\icons\social\jolicloud.png" />
+    <Content Include="template\assets\img\icons\social\klout.png" />
+    <Content Include="template\assets\img\icons\social\last-fm.png" />
+    <Content Include="template\assets\img\icons\social\linkedin.png" />
+    <Content Include="template\assets\img\icons\social\myspace.png" />
+    <Content Include="template\assets\img\icons\social\picasa.png" />
+    <Content Include="template\assets\img\icons\social\pintrest.png" />
+    <Content Include="template\assets\img\icons\social\quora.png" />
+    <Content Include="template\assets\img\icons\social\reddit.png" />
+    <Content Include="template\assets\img\icons\social\rss.png" />
+    <Content Include="template\assets\img\icons\social\skype.png" />
+    <Content Include="template\assets\img\icons\social\spotify.png" />
+    <Content Include="template\assets\img\icons\social\stumbleupon.png" />
+    <Content Include="template\assets\img\icons\social\tumblr.png" />
+    <Content Include="template\assets\img\icons\social\twitter.png" />
+    <Content Include="template\assets\img\icons\social\vimeo.png" />
+    <Content Include="template\assets\img\icons\social\vk.png" />
+    <Content Include="template\assets\img\icons\social\wordpress.png" />
+    <Content Include="template\assets\img\icons\social\xing.png" />
+    <Content Include="template\assets\img\icons\social\yahoo.png" />
+    <Content Include="template\assets\img\icons\social\youtube.png" />
+    <Content Include="template\assets\img\logo.png" />
+    <Content Include="template\assets\img\people\img1-large.jpg" />
+    <Content Include="template\assets\img\people\img1-small.jpg" />
+    <Content Include="template\assets\img\people\img2-large.jpg" />
+    <Content Include="template\assets\img\people\img2-small.jpg" />
+    <Content Include="template\assets\img\people\img3-large.jpg" />
+    <Content Include="template\assets\img\people\img3-small.jpg" />
+    <Content Include="template\assets\img\people\img4-large.jpg" />
+    <Content Include="template\assets\img\people\img4-small.jpg" />
+    <Content Include="template\assets\img\people\img5-large.jpg" />
+    <Content Include="template\assets\img\people\img5-small.jpg" />
+    <Content Include="template\assets\img\photos\img1.jpg" />
+    <Content Include="template\assets\img\photos\img10.jpg" />
+    <Content Include="template\assets\img\photos\img11.jpg" />
+    <Content Include="template\assets\img\photos\img12.jpg" />
+    <Content Include="template\assets\img\photos\img2.jpg" />
+    <Content Include="template\assets\img\photos\img3.jpg" />
+    <Content Include="template\assets\img\photos\img4.jpg" />
+    <Content Include="template\assets\img\photos\img5.jpg" />
+    <Content Include="template\assets\img\photos\img6.jpg" />
+    <Content Include="template\assets\img\photos\img7.jpg" />
+    <Content Include="template\assets\img\photos\img8.jpg" />
+    <Content Include="template\assets\img\photos\img9.jpg" />
+    <Content Include="template\assets\img\pics\img1-large.jpg" />
+    <Content Include="template\assets\img\pics\img1-medium.jpg" />
+    <Content Include="template\assets\img\pics\img2-large.jpg" />
+    <Content Include="template\assets\img\pics\img2-medium.jpg" />
+    <Content Include="template\assets\img\posts\img1.jpg" />
+    <Content Include="template\assets\img\posts\img2.jpg" />
+    <Content Include="template\assets\img\posts\img3.jpg" />
+    <Content Include="template\assets\img\sliders\bxslider\left-blue-hover.png" />
+    <Content Include="template\assets\img\sliders\bxslider\left-green-hover.png" />
+    <Content Include="template\assets\img\sliders\bxslider\left-orange-hover.png" />
+    <Content Include="template\assets\img\sliders\bxslider\left-red-hover.png" />
+    <Content Include="template\assets\img\sliders\bxslider\right-blue-hover.png" />
+    <Content Include="template\assets\img\sliders\bxslider\right-green-hover.png" />
+    <Content Include="template\assets\img\sliders\bxslider\right-orange-hover.png" />
+    <Content Include="template\assets\img\sliders\bxslider\right-red-hover.png" />
+    <Content Include="template\assets\img\sliders\carousel\corners-blue.png" />
+    <Content Include="template\assets\img\sliders\carousel\corners-green.png" />
+    <Content Include="template\assets\img\sliders\carousel\corners-orange.png" />
+    <Content Include="template\assets\img\sliders\carousel\corners-red.png" />
+    <Content Include="template\assets\img\sliders\revolution\arrow_left.png" />
+    <Content Include="template\assets\img\sliders\revolution\arrow_left_bk.png" />
+    <Content Include="template\assets\img\sliders\revolution\arrow_left_blue.png" />
+    <Content Include="template\assets\img\sliders\revolution\arrow_right.png" />
+    <Content Include="template\assets\img\sliders\revolution\arrow_right_bk.png" />
+    <Content Include="template\assets\img\sliders\revolution\arrow_right_blue.png" />
+    <Content Include="template\assets\img\sliders\revolution\bg1.jpg" />
+    <Content Include="template\assets\img\sliders\revolution\bg2.jpg" />
+    <Content Include="template\assets\img\sliders\revolution\bg3.jpg" />
+    <Content Include="template\assets\img\sliders\revolution\bg4.jpg" />
+    <Content Include="template\assets\img\sliders\revolution\bg5.jpg" />
+    <Content Include="template\assets\img\sliders\revolution\bg6.jpg" />
+    <Content Include="template\assets\img\sliders\revolution\bg7.jpg" />
+    <Content Include="template\assets\img\sliders\revolution\bg8.jpg" />
+    <Content Include="template\assets\img\sliders\revolution\bg9.jpg" />
+    <Content Include="template\assets\img\sliders\revolution\children.jpg" />
+    <Content Include="template\assets\img\sliders\revolution\hint1-blue.png" />
+    <Content Include="template\assets\img\sliders\revolution\hint1-green.png" />
+    <Content Include="template\assets\img\sliders\revolution\hint1-orange.png" />
+    <Content Include="template\assets\img\sliders\revolution\hint1-red.png" />
+    <Content Include="template\assets\img\sliders\revolution\hint2-blue.png" />
+    <Content Include="template\assets\img\sliders\revolution\hint2-green.png" />
+    <Content Include="template\assets\img\sliders\revolution\hint2-orange.png" />
+    <Content Include="template\assets\img\sliders\revolution\hint2-red.png" />
+    <Content Include="template\assets\img\sliders\revolution\ipad.png" />
+    <Content Include="template\assets\img\sliders\revolution\ipadmini.png" />
+    <Content Include="template\assets\img\sliders\revolution\iphone.png" />
+    <Content Include="template\assets\img\sliders\revolution\iphone_large.png" />
+    <Content Include="template\assets\img\sliders\revolution\iphone_left.png" />
+    <Content Include="template\assets\img\sliders\revolution\iphone_right.png" />
+    <Content Include="template\assets\img\sliders\revolution\lady.png" />
+    <Content Include="template\assets\img\sliders\revolution\mac.png" />
+    <Content Include="template\assets\img\sliders\revolution\macbook.png" />
+    <Content Include="template\assets\img\sliders\revolution\man-winner.png" />
+    <Content Include="template\assets\img\sliders\revolution\moto.png" />
+    <Content Include="template\assets\img\sliders\revolution\thumbs\thumb1.jpg" />
+    <Content Include="template\assets\img\sliders\revolution\thumbs\thumb2.jpg" />
+    <Content Include="template\assets\img\sliders\revolution\thumbs\thumb3.jpg" />
+    <Content Include="template\assets\img\sliders\revolution\thumbs\thumb4.jpg" />
+    <Content Include="template\assets\img\sliders\revolution\thumbs\thumb5.jpg" />
+    <Content Include="template\assets\img\sliders\revolution\thumbs\thumb6.jpg" />
+    <Content Include="template\assets\img\sliders\revolution\thumbs\thumb7.jpg" />
+    <Content Include="template\assets\img\sliders\revolution\woman.png" />
+    <Content Include="template\assets\img\steps\one.png" />
+    <Content Include="template\assets\img\steps\three.png" />
+    <Content Include="template\assets\img\steps\two.png" />
+    <Content Include="template\assets\img\steps\two_bk.png" />
+    <Content Include="template\assets\img\syncfusion-icons-white.png" />
+    <Content Include="template\assets\img\syncfusion-icons.png" />
+    <Content Include="template\assets\img\up.png" />
+    <Content Include="template\assets\img\works\img1.jpg" />
+    <Content Include="template\assets\img\works\img2.jpg" />
+    <Content Include="template\assets\img\works\img3.jpg" />
+    <Content Include="template\assets\img\works\img4.jpg" />
+    <Content Include="template\assets\img\works\img5.jpg" />
+    <Content Include="template\assets\img\works\img6.jpg" />
+    <Content Include="template\assets\map\jquery-1.8.2.js" />
+    <Content Include="template\assets\map\jquery-jvectormap-1.2.2.css" />
+    <Content Include="template\assets\map\jquery-jvectormap-1.2.2.min.js" />
+    <Content Include="template\assets\map\jquery-jvectormap-ca-lcc-en.js" />
+    <Content Include="template\assets\map\jquery-jvectormap-map.js" />
+    <Content Include="template\assets\map\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="template\assets\map\jquery.latest.min.js" />
+    <Content Include="template\assets\map\jquery.vector-map.js" />
+    <Content Include="template\assets\plugins\animated-header\cbpAnimatedHeader.js" />
+    <Content Include="template\assets\plugins\animated-header\cbpAnimatedHeader.min.js" />
+    <Content Include="template\assets\plugins\animated-header\classie.js" />
+    <Content Include="template\assets\plugins\back-to-top.js" />
+    <Content Include="template\assets\plugins\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="template\assets\plugins\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="template\assets\plugins\bootstrap\css\bootstrap.css" />
+    <Content Include="template\assets\plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="template\assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="template\assets\plugins\bootstrap\js\bootstrap.js" />
+    <Content Include="template\assets\plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="template\assets\plugins\bxslider\images\bx_loader.gif" />
+    <Content Include="template\assets\plugins\bxslider\images\left-hover.png" />
+    <Content Include="template\assets\plugins\bxslider\images\left.png" />
+    <Content Include="template\assets\plugins\bxslider\images\right-hover.png" />
+    <Content Include="template\assets\plugins\bxslider\images\right.png" />
+    <Content Include="template\assets\plugins\bxslider\jquery.bxslider.css" />
+    <Content Include="template\assets\plugins\bxslider\jquery.bxslider.js" />
+    <Content Include="template\assets\plugins\bxslider\jquery.bxslider.min.js" />
+    <Content Include="template\assets\plugins\components-dropdowns.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="template\assets\plugins\fancybox\CHANGELOG.txt" />
+    <Content Include="template\assets\plugins\fancybox\demo\1_b.jpg" />
+    <Content Include="template\assets\plugins\fancybox\demo\1_s.jpg" />
+    <Content Include="template\assets\plugins\fancybox\demo\2_b.jpg" />
+    <Content Include="template\assets\plugins\fancybox\demo\2_s.jpg" />
+    <Content Include="template\assets\plugins\fancybox\demo\3_b.jpg" />
+    <Content Include="template\assets\plugins\fancybox\demo\3_s.jpg" />
+    <Content Include="template\assets\plugins\fancybox\demo\4_b.jpg" />
+    <Content Include="template\assets\plugins\fancybox\demo\4_s.jpg" />
+    <Content Include="template\assets\plugins\fancybox\demo\5_b.jpg" />
+    <Content Include="template\assets\plugins\fancybox\demo\5_s.jpg" />
+    <Content Include="template\assets\plugins\fancybox\demo\ajax.txt" />
+    <Content Include="template\assets\plugins\fancybox\demo\iframe.html" />
+    <Content Include="template\assets\plugins\fancybox\demo\index.html" />
+    <Content Include="template\assets\plugins\fancybox\lib\jquery-1.8.2.min.js" />
+    <Content Include="template\assets\plugins\fancybox\lib\jquery.mousewheel-3.0.6.pack.js" />
+    <Content Include="template\assets\plugins\fancybox\README.txt" />
+    <Content Include="template\assets\plugins\fancybox\source\blank.gif" />
+    <Content Include="template\assets\plugins\fancybox\source\fancybox_loading.gif" />
+    <Content Include="template\assets\plugins\fancybox\source\fancybox_overlay.png" />
+    <Content Include="template\assets\plugins\fancybox\source\fancybox_sprite.png" />
+    <Content Include="template\assets\plugins\fancybox\source\helpers\fancybox_buttons.png" />
+    <Content Include="template\assets\plugins\fancybox\source\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="template\assets\plugins\fancybox\source\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="template\assets\plugins\fancybox\source\helpers\jquery.fancybox-media.js" />
+    <Content Include="template\assets\plugins\fancybox\source\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="template\assets\plugins\fancybox\source\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="template\assets\plugins\fancybox\source\jquery.fancybox.css" />
+    <Content Include="template\assets\plugins\fancybox\source\jquery.fancybox.js" />
+    <Content Include="template\assets\plugins\fancybox\source\jquery.fancybox.pack.js" />
+    <Content Include="template\assets\plugins\flexslider\demo\basic-carousel.html" />
+    <Content Include="template\assets\plugins\flexslider\demo\carousel-min-max.html" />
+    <Content Include="template\assets\plugins\flexslider\demo\css\demo.css" />
+    <Content Include="template\assets\plugins\flexslider\demo\css\shCore.css" />
+    <Content Include="template\assets\plugins\flexslider\demo\css\shThemeDefault.css" />
+    <Content Include="template\assets\plugins\flexslider\demo\fonts\webfonts\geo-medium\svg\1110FC_0.svg" />
+    <Content Include="template\assets\plugins\flexslider\demo\fonts\webfonts\geo-medium\svg\svg_test.html" />
+    <Content Include="template\assets\plugins\flexslider\demo\fonts\webfonts\geo-regular\svg\11014B_0.svg" />
+    <Content Include="template\assets\plugins\flexslider\demo\fonts\webfonts\geo-regular\svg\svg_test.html" />
+    <Content Include="template\assets\plugins\flexslider\demo\fonts\webfonts\geo-semibold\svg\index.html" />
+    <Content Include="template\assets\plugins\flexslider\demo\fonts\webfonts\geo-semibold\svg\style_169898.svg" />
+    <Content Include="template\assets\plugins\flexslider\demo\images\kitchen_adventurer_caramel.jpg" />
+    <Content Include="template\assets\plugins\flexslider\demo\images\kitchen_adventurer_cheesecake_brownie.jpg" />
+    <Content Include="template\assets\plugins\flexslider\demo\images\kitchen_adventurer_donut.jpg" />
+    <Content Include="template\assets\plugins\flexslider\demo\images\kitchen_adventurer_lemon.jpg" />
+    <Content Include="template\assets\plugins\flexslider\demo\images\logo.png" />
+    <Content Include="template\assets\plugins\flexslider\demo\index.html" />
+    <Content Include="template\assets\plugins\flexslider\demo\js\demo.js" />
+    <Content Include="template\assets\plugins\flexslider\demo\js\froogaloop.js" />
+    <Content Include="template\assets\plugins\flexslider\demo\js\jquery.easing.js" />
+    <Content Include="template\assets\plugins\flexslider\demo\js\jquery.fitvid.js" />
+    <Content Include="template\assets\plugins\flexslider\demo\js\jquery.mousewheel.js" />
+    <Content Include="template\assets\plugins\flexslider\demo\js\modernizr.js" />
+    <Content Include="template\assets\plugins\flexslider\demo\js\shBrushCss.js" />
+    <Content Include="template\assets\plugins\flexslider\demo\js\shBrushJScript.js" />
+    <Content Include="template\assets\plugins\flexslider\demo\js\shBrushXml.js" />
+    <Content Include="template\assets\plugins\flexslider\demo\js\shCore.js" />
+    <Content Include="template\assets\plugins\flexslider\demo\thumbnail-controlnav.html" />
+    <Content Include="template\assets\plugins\flexslider\demo\thumbnail-slider.html" />
+    <Content Include="template\assets\plugins\flexslider\demo\video.html" />
+    <Content Include="template\assets\plugins\flexslider\flexslider.css" />
+    <Content Include="template\assets\plugins\flexslider\images\bg_direction_nav.png" />
+    <Content Include="template\assets\plugins\flexslider\images\bg_direction_nav1.png" />
+    <Content Include="template\assets\plugins\flexslider\jquery.flexslider-min.js" />
+    <Content Include="template\assets\plugins\flexslider\jquery.flexslider.js" />
+    <Content Include="template\assets\plugins\font-awesome\css\font-awesome.css" />
+    <Content Include="template\assets\plugins\font-awesome\css\font-awesome.min.css" />
+    <Content Include="template\assets\plugins\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="template\assets\plugins\gmaps\examples\basic.html" />
+    <Content Include="template\assets\plugins\gmaps\examples\context_menu.html" />
+    <Content Include="template\assets\plugins\gmaps\examples\custom_controls.html" />
+    <Content Include="template\assets\plugins\gmaps\examples\elevation_locations.html" />
+    <Content Include="template\assets\plugins\gmaps\examples\elevation_routes.html" />
+    <Content Include="template\assets\plugins\gmaps\examples\examples.css" />
+    <Content Include="template\assets\plugins\gmaps\examples\fusion_tables.html" />
+    <Content Include="template\assets\plugins\gmaps\examples\geocoding.html" />
+    <Content Include="template\assets\plugins\gmaps\examples\geofences.html" />
+    <Content Include="template\assets\plugins\gmaps\examples\geolocation.html" />
+    <Content Include="template\assets\plugins\gmaps\examples\geometry.html" />
+    <Content Include="template\assets\plugins\gmaps\examples\kml.html" />
+    <Content Include="template\assets\plugins\gmaps\examples\layers.html" />
+    <Content Include="template\assets\plugins\gmaps\examples\layers_places.html" />
+    <Content Include="template\assets\plugins\gmaps\examples\map_events.html" />
+    <Content Include="template\assets\plugins\gmaps\examples\map_types.html" />
+    <Content Include="template\assets\plugins\gmaps\examples\markers.html" />
+    <Content Include="template\assets\plugins\gmaps\examples\marker_clusterer.html" />
+    <Content Include="template\assets\plugins\gmaps\examples\overlays.html" />
+    <Content Include="template\assets\plugins\gmaps\examples\overlay_map_types.html" />
+    <Content Include="template\assets\plugins\gmaps\examples\polygons.html" />
+    <Content Include="template\assets\plugins\gmaps\examples\polylines.html" />
+    <Content Include="template\assets\plugins\gmaps\examples\routes.html" />
+    <Content Include="template\assets\plugins\gmaps\examples\routes_advanced.html" />
+    <Content Include="template\assets\plugins\gmaps\examples\static.html" />
+    <Content Include="template\assets\plugins\gmaps\examples\static_markers.html" />
+    <Content Include="template\assets\plugins\gmaps\examples\static_polylines.html" />
+    <Content Include="template\assets\plugins\gmaps\examples\styled_maps.html" />
+    <Content Include="template\assets\plugins\gmaps\examples\travel_route.html" />
+    <Content Include="template\assets\plugins\gmaps\gmaps.js" />
+    <Content Include="template\assets\plugins\gmaps\lib\gmaps.controls.js" />
+    <Content Include="template\assets\plugins\gmaps\lib\gmaps.core.js" />
+    <Content Include="template\assets\plugins\gmaps\lib\gmaps.events.js" />
+    <Content Include="template\assets\plugins\gmaps\lib\gmaps.geofences.js" />
+    <Content Include="template\assets\plugins\gmaps\lib\gmaps.geometry.js" />
+    <Content Include="template\assets\plugins\gmaps\lib\gmaps.layers.js" />
+    <Content Include="template\assets\plugins\gmaps\lib\gmaps.map_types.js" />
+    <Content Include="template\assets\plugins\gmaps\lib\gmaps.markers.js" />
+    <Content Include="template\assets\plugins\gmaps\lib\gmaps.native_extensions.js" />
+    <Content Include="template\assets\plugins\gmaps\lib\gmaps.overlays.js" />
+    <Content Include="template\assets\plugins\gmaps\lib\gmaps.routes.js" />
+    <Content Include="template\assets\plugins\gmaps\lib\gmaps.static.js" />
+    <Content Include="template\assets\plugins\gmaps\lib\gmaps.streetview.js" />
+    <Content Include="template\assets\plugins\gmaps\lib\gmaps.styles.js" />
+    <Content Include="template\assets\plugins\gmaps\lib\gmaps.utils.js" />
+    <Content Include="template\assets\plugins\gmaps\test\index.html" />
+    <Content Include="template\assets\plugins\gmaps\test\lib\jasmine-html.js" />
+    <Content Include="template\assets\plugins\gmaps\test\lib\jasmine.css" />
+    <Content Include="template\assets\plugins\gmaps\test\lib\jasmine.js" />
+    <Content Include="template\assets\plugins\gmaps\test\spec\EventSpec.js" />
+    <Content Include="template\assets\plugins\gmaps\test\spec\GeometrySpec.js" />
+    <Content Include="template\assets\plugins\gmaps\test\spec\LayerSpec.js" />
+    <Content Include="template\assets\plugins\gmaps\test\spec\MapSpec.js" />
+    <Content Include="template\assets\plugins\gmaps\test\spec\MarkerSpec.js" />
+    <Content Include="template\assets\plugins\gmaps\test\spec\OverlaySpec.js" />
+    <Content Include="template\assets\plugins\gmaps\test\spec\RouteSpec.js" />
+    <Content Include="template\assets\plugins\gmaps\test\spec\StreetViewSpec.js" />
+    <Content Include="template\assets\plugins\gmaps\test\spec\StyleSpec.js" />
+    <Content Include="template\assets\plugins\hover-dropdown.js" />
+    <Content Include="template\assets\plugins\jquery-1.10.2.min.js" />
+    <Content Include="template\assets\plugins\jquery-migrate-1.2.1.min.js" />
+    <Content Include="template\assets\plugins\jquery.mixitup.min.js" />
+    <Content Include="template\assets\plugins\respond.min.js" />
+    <Content Include="template\assets\plugins\revolution_slider\01.Sample-Boxed.html" />
+    <Content Include="template\assets\plugins\revolution_slider\02.Sample-Fullwidth.html" />
+    <Content Include="template\assets\plugins\revolution_slider\03.Sample-FullScreen.html" />
+    <Content Include="template\assets\plugins\revolution_slider\04.Sample-FullScreen-Offsets.html" />
+    <Content Include="template\assets\plugins\revolution_slider\05.Sample-Aligns.html" />
+    <Content Include="template\assets\plugins\revolution_slider\06.Sample-AlignForce.html" />
+    <Content Include="template\assets\plugins\revolution_slider\07.Sample-Videos.html" />
+    <Content Include="template\assets\plugins\revolution_slider\08.Sample-NavigationStyle.html" />
+    <Content Include="template\assets\plugins\revolution_slider\09.Sample-Api.html" />
+    <Content Include="template\assets\plugins\revolution_slider\10.Sample-LazyLoading.html" />
+    <Content Include="template\assets\plugins\revolution_slider\11.Sample-Shuffle.html" />
+    <Content Include="template\assets\plugins\revolution_slider\12.Sample-Backgrounds.html" />
+    <Content Include="template\assets\plugins\revolution_slider\13.Sample-HideCaptions.html" />
+    <Content Include="template\assets\plugins\revolution_slider\14.Sample-KenBurns.html" />
+    <Content Include="template\assets\plugins\revolution_slider\15.Sample-VideoBG.html" />
+    <Content Include="template\assets\plugins\revolution_slider\16.Caption-ShowDown.html" />
+    <Content Include="template\assets\plugins\revolution_slider\17.Sample-DottedBG.html" />
+    <Content Include="template\assets\plugins\revolution_slider\css\navstylechange.css" />
+    <Content Include="template\assets\plugins\revolution_slider\css\noneed.css" />
+    <Content Include="template\assets\plugins\revolution_slider\css\preview.css" />
+    <Content Include="template\assets\plugins\revolution_slider\css\rs-style.css" />
+    <Content Include="template\assets\plugins\revolution_slider\css\style.css" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\assets\css\bootstrap-responsive.css" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\assets\css\bootstrap.css" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\assets\css\documenter_style.css" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\assets\images\image_1.gif" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\assets\images\image_2.png" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\assets\img\glyphicons-halflings-white.png" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\assets\img\glyphicons-halflings.png" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\assets\img\glyphicons\glyphicons_009_magic.png" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\assets\img\glyphicons\glyphicons_042_group.png" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\assets\img\glyphicons\glyphicons_079_podium.png" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\assets\img\glyphicons\glyphicons_082_roundabout.png" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\assets\img\glyphicons\glyphicons_155_show_thumbnails.png" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\assets\img\glyphicons\glyphicons_163_iphone.png" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\assets\img\glyphicons\glyphicons_214_resize_small.png" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\assets\img\glyphicons\glyphicons_266_book_open.png" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\assets\json.txt" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\assets\js\bootstrap-min.js" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\assets\js\google-code-prettify\prettify.css" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\assets\js\google-code-prettify\prettify.js" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\assets\js\jquery.easing.js" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\assets\js\jquery.js" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\assets\js\jquery.scrollTo.js" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\assets\js\scripts.js" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\css\documenter_style.css" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\css\img\info.png" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\css\img\pre_bg.png" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\css\img\warning.png" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\css\shDocumenter.css" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\documentation.html" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\js\jquery.1.6.4.js" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\js\jquery.easing.js" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\js\jquery.scrollTo-1.4.2-min.js" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\js\script.js" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\js\shBrushCss.js" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\js\shBrushJScript.js" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\js\shBrushXml.js" />
+    <Content Include="template\assets\plugins\revolution_slider\documentation\js\shCore.js" />
+    <Content Include="template\assets\plugins\revolution_slider\Editor-Captions.html" />
+    <Content Include="template\assets\plugins\revolution_slider\Editor-Transitions.html" />
+    <Content Include="template\assets\plugins\revolution_slider\editor\assets\logo.png" />
+    <Content Include="template\assets\plugins\revolution_slider\editor\assets\prebg.png" />
+    <Content Include="template\assets\plugins\revolution_slider\editor\assets\transparent.jpg" />
+    <Content Include="template\assets\plugins\revolution_slider\editor\assets\transparent.png" />
+    <Content Include="template\assets\plugins\revolution_slider\editor\assets\transtiled.png" />
+    <Content Include="template\assets\plugins\revolution_slider\editor\assets\trans_tile.png" />
+    <Content Include="template\assets\plugins\revolution_slider\editor\assets\trans_tile2.png" />
+    <Content Include="template\assets\plugins\revolution_slider\editor\editor.css" />
+    <Content Include="template\assets\plugins\revolution_slider\editor\editor.js" />
+    <Content Include="template\assets\plugins\revolution_slider\editor\type\fontello.css" />
+    <Content Include="template\assets\plugins\revolution_slider\editor\type\fontello\fontello-social.svg" />
+    <Content Include="template\assets\plugins\revolution_slider\editor\type\fontello\fontello.svg" />
+    <Content Include="template\assets\plugins\revolution_slider\images\apple.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\bg1.jpg" />
+    <Content Include="template\assets\plugins\revolution_slider\images\bg2.jpg" />
+    <Content Include="template\assets\plugins\revolution_slider\images\bg3.jpg" />
+    <Content Include="template\assets\plugins\revolution_slider\images\bg4.jpg" />
+    <Content Include="template\assets\plugins\revolution_slider\images\clock.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\clock2.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\cloud1.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\cloud2.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\cloud3.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\darkblurbg.jpg" />
+    <Content Include="template\assets\plugins\revolution_slider\images\dummy.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\graph.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\guy1.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\guy2.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\guy3.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\guy4.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\guy5.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\hill1.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\hill2.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\hill3.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\hill4.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\huge.jpg" />
+    <Content Include="template\assets\plugins\revolution_slider\images\icon_photo.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\imac1.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\kenburns1.jpg" />
+    <Content Include="template\assets\plugins\revolution_slider\images\kenburns2.jpg" />
+    <Content Include="template\assets\plugins\revolution_slider\images\kenburns3.jpg" />
+    <Content Include="template\assets\plugins\revolution_slider\images\kenburns4.jpg" />
+    <Content Include="template\assets\plugins\revolution_slider\images\kenburns5.jpg" />
+    <Content Include="template\assets\plugins\revolution_slider\images\logo.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\lupe_imac.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\lupe_macbook.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\macbook2.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\slidebg1.jpg" />
+    <Content Include="template\assets\plugins\revolution_slider\images\slidebg1.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\star.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\tiles\bgtile.jpg" />
+    <Content Include="template\assets\plugins\revolution_slider\images\tiles\bgtile.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\tiles\check.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\tiles\divider.jpg" />
+    <Content Include="template\assets\plugins\revolution_slider\images\tiles\divider.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\tiles\dragnotch.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\tiles\dragsliderbg.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\tiles\dropdown.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\tiles\inputfield.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\tiles\logo.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\tiles\minishadow.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\tiles\minishadow2.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\tiles\minishadow3.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\tiles\minus.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\tiles\no.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\tiles\ok.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\tiles\plus.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\tiles\radio.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\tiles\rotator-line.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\tiles\rotator.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\tiles\shadow3_large.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\tiles\sliderconfigheadline.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\transparent.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\trans_tile2.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\tree.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\videobg1.jpg" />
+    <Content Include="template\assets\plugins\revolution_slider\images\videoshadow.png" />
+    <Content Include="template\assets\plugins\revolution_slider\images\video_forest.jpg" />
+    <Content Include="template\assets\plugins\revolution_slider\images\woman.png" />
+    <Content Include="template\assets\plugins\revolution_slider\index-fullwidth.html" />
+    <Content Include="template\assets\plugins\revolution_slider\index-static.html" />
+    <Content Include="template\assets\plugins\revolution_slider\index.html" />
+    <Content Include="template\assets\plugins\revolution_slider\previewjs\preview-normal.js" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\arrowleft.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\arrowright.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\arrow_large_left.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\arrow_large_right.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\arrow_left.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\arrow_left2.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\arrow_right.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\arrow_right2.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\black50.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\boxed_bgtile.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\bullet.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\bullets.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\bullets2.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\bullet_bk.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\bullet_boxed.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\coloredbg.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\grain.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\gridtile.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\gridtile_3x3.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\gridtile_3x3_white.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\gridtile_white.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\large_left.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\large_left_bk.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\large_right.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\large_right_bk.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\loader.gif" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\loader2.gif" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\navigdots.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\navigdots_bgtile.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\shadow1.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\shadow2.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\shadow3.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\small_left.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\small_left_boxed.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\small_right.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\small_right_boxed.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\timer.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\timerdot.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\transparent.jpg" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\assets\white50.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\css\settings %28In Konflikt stehende Kopie von Flash Horvath 2013-02-13%29.css" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\css\settings-ie8.css" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\css\settings.css" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\font\revicons.svg" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\images\decor_inside.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\images\decor_inside_white.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\images\decor_testimonial.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\images\gradient\g30.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\images\gradient\g40.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\js\jquery.themepunch.plugins.min.js" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\js\jquery.themepunch.revolution.js" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\js\jquery.themepunch.revolution.min.js" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\videojs\font\vjs.svg" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\videojs\video-js.css" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\videojs\video-js.min.css" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\videojs\video-js.png" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\videojs\video-js.swf" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\videojs\video.dev.js" />
+    <Content Include="template\assets\plugins\revolution_slider\rs-plugin\videojs\video.js" />
+    <Content Include="template\assets\plugins\uniform\css\uniform.default.css" />
+    <Content Include="template\assets\plugins\uniform\css\uniform.default.min.css" />
+    <Content Include="template\assets\plugins\uniform\images\bg-input-focus.png" />
+    <Content Include="template\assets\plugins\uniform\images\bg-input.png" />
+    <Content Include="template\assets\plugins\uniform\images\sprite.png" />
+    <Content Include="template\assets\plugins\uniform\images\sprite_original.png" />
+    <Content Include="template\assets\plugins\uniform\jquery.uniform.js" />
+    <Content Include="template\assets\plugins\uniform\jquery.uniform.min.js" />
+    <Content Include="template\assets\scripts\app.js" />
+    <Content Include="template\assets\scripts\contact-us.js" />
+    <Content Include="template\assets\scripts\index.js" />
+    <Content Include="template\assets\scripts\portfolio.js" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="resources\photos\photodune-1055956-something-on-the-palm-s.jpg" />
+    <Content Include="resources\photos\photodune-213631-got-the-job-m.jpg" />
+    <Content Include="resources\photos\photodune-2359510-smiles-xl.jpg" />
+    <Content Include="resources\photos\photodune-2447737-office-xs.jpg" />
+    <Content Include="resources\photos\photodune-2713966-the-interior-of-an-office-building-xs.jpg" />
+    <Content Include="resources\photos\photodune-3384952-business-woman-with-her-staff-in-background-at-office-l.jpg" />
+    <Content Include="resources\photos\photodune-3417024-relaxing-guy-l.jpg" />
+    <Content Include="resources\photos\photodune-4092707-young-business-lady-s.jpg" />
+    <Content Include="resources\photos\photodune-4444657-building-xs.jpg" />
+    <Content Include="resources\photos\photodune-4920250-hongkong-l.jpg" />
+    <Content Include="resources\photos\photodune-5465387-representative-of-company-s.jpg" />
+    <Content Include="resources\photos\photodune-908079-modern-office-interior-xs.jpg" />
+    <Content Include="resources\revolution_slider_doc\assets\css\bootstrap-responsive.css" />
+    <Content Include="resources\revolution_slider_doc\assets\css\bootstrap.css" />
+    <Content Include="resources\revolution_slider_doc\assets\css\documenter_style.css" />
+    <Content Include="resources\revolution_slider_doc\assets\images\image_1.gif" />
+    <Content Include="resources\revolution_slider_doc\assets\images\image_2.png" />
+    <Content Include="resources\revolution_slider_doc\assets\img\glyphicons-halflings-white.png" />
+    <Content Include="resources\revolution_slider_doc\assets\img\glyphicons-halflings.png" />
+    <Content Include="resources\revolution_slider_doc\assets\img\glyphicons\glyphicons_009_magic.png" />
+    <Content Include="resources\revolution_slider_doc\assets\img\glyphicons\glyphicons_042_group.png" />
+    <Content Include="resources\revolution_slider_doc\assets\img\glyphicons\glyphicons_079_podium.png" />
+    <Content Include="resources\revolution_slider_doc\assets\img\glyphicons\glyphicons_082_roundabout.png" />
+    <Content Include="resources\revolution_slider_doc\assets\img\glyphicons\glyphicons_155_show_thumbnails.png" />
+    <Content Include="resources\revolution_slider_doc\assets\img\glyphicons\glyphicons_163_iphone.png" />
+    <Content Include="resources\revolution_slider_doc\assets\img\glyphicons\glyphicons_214_resize_small.png" />
+    <Content Include="resources\revolution_slider_doc\assets\img\glyphicons\glyphicons_266_book_open.png" />
+    <Content Include="resources\revolution_slider_doc\assets\json.txt" />
+    <Content Include="resources\revolution_slider_doc\assets\js\bootstrap-min.js" />
+    <Content Include="resources\revolution_slider_doc\assets\js\google-code-prettify\prettify.css" />
+    <Content Include="resources\revolution_slider_doc\assets\js\google-code-prettify\prettify.js" />
+    <Content Include="resources\revolution_slider_doc\assets\js\jquery.easing.js" />
+    <Content Include="resources\revolution_slider_doc\assets\js\jquery.js" />
+    <Content Include="resources\revolution_slider_doc\assets\js\jquery.scrollTo.js" />
+    <Content Include="resources\revolution_slider_doc\assets\js\scripts.js" />
+    <Content Include="resources\revolution_slider_doc\css\documenter_style.css" />
+    <Content Include="resources\revolution_slider_doc\css\img\info.png" />
+    <Content Include="resources\revolution_slider_doc\css\img\pre_bg.png" />
+    <Content Include="resources\revolution_slider_doc\css\img\warning.png" />
+    <Content Include="resources\revolution_slider_doc\css\shDocumenter.css" />
+    <Content Include="resources\revolution_slider_doc\documentation.html" />
+    <Content Include="resources\revolution_slider_doc\js\jquery.1.6.4.js" />
+    <Content Include="resources\revolution_slider_doc\js\jquery.easing.js" />
+    <Content Include="resources\revolution_slider_doc\js\jquery.scrollTo-1.4.2-min.js" />
+    <Content Include="resources\revolution_slider_doc\js\script.js" />
+    <Content Include="resources\revolution_slider_doc\js\shBrushCss.js" />
+    <Content Include="resources\revolution_slider_doc\js\shBrushJScript.js" />
+    <Content Include="resources\revolution_slider_doc\js\shBrushXml.js" />
+    <Content Include="resources\revolution_slider_doc\js\shCore.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <None Include="Service References\C4H_Service\Service3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Managers\DesignManager.cs" />
+    <Compile Include="Managers\DonorSearchManager.cs" />
+    <Compile Include="Pages\SearchCharities\CharityProfilePage.aspx.cs">
+      <DependentUpon>CharityProfilePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SearchCharities\CharityProfilePage.aspx.designer.cs">
+      <DependentUpon>CharityProfilePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SearchCharities\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\SearchCharities\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\C4H_Service\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\C4H_Service\Service.wsdl" />
+    <None Include="Service References\C4H_Service\Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\C4H_Service\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\C4H_Service\Service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="template\assets\.DS_Store" />
+    <None Include="template\assets\css\.DS_Store" />
+    <None Include="template\assets\css\pages\.DS_Store" />
+    <None Include="template\assets\fonts\cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff" />
+    <None Include="template\assets\fonts\DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff" />
+    <None Include="template\assets\fonts\k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff" />
+    <None Include="template\assets\fonts\MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-uXM.woff" />
+    <None Include="template\assets\img\.DS_Store" />
+    <None Include="template\assets\img\bg\Thumbs.db" />
+    <None Include="template\assets\img\careers\Thumbs.db" />
+    <None Include="template\assets\img\clients\Thumbs.db" />
+    <None Include="template\assets\img\icons\.DS_Store" />
+    <None Include="template\assets\img\icons\Thumbs.db" />
+    <None Include="template\assets\img\people\Thumbs.db" />
+    <None Include="template\assets\img\photos\Thumbs.db" />
+    <None Include="template\assets\img\pics\Thumbs.db" />
+    <None Include="template\assets\img\posts\Thumbs.db" />
+    <None Include="template\assets\img\sliders\bxslider\Thumbs.db" />
+    <None Include="template\assets\img\sliders\carousel\Thumbs.db" />
+    <None Include="template\assets\img\sliders\revolution\Thumbs.db" />
+    <None Include="template\assets\img\sliders\revolution\thumbs\Thumbs.db" />
+    <None Include="template\assets\img\steps\Thumbs.db" />
+    <None Include="template\assets\img\Thumbs.db" />
+    <None Include="template\assets\img\works\Thumbs.db" />
+    <None Include="template\assets\plugins\.DS_Store" />
+    <None Include="template\assets\plugins\bootstrap\css\bootstrap-theme.css.map" />
+    <None Include="template\assets\plugins\bootstrap\css\bootstrap.css.map" />
+    <None Include="template\assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="template\assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="template\assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="template\assets\plugins\fancybox\.gitattributes" />
+    <None Include="template\assets\plugins\fancybox\CHANGELOG.md" />
+    <None Include="template\assets\plugins\fancybox\README.md" />
+    <None Include="template\assets\plugins\flexslider\demo\fonts\webfonts\geo-medium\ttf\1110FC_0.ttf" />
+    <None Include="template\assets\plugins\flexslider\demo\fonts\webfonts\geo-medium\woff\1110FC_0.woff" />
+    <None Include="template\assets\plugins\flexslider\demo\fonts\webfonts\geo-regular\eot\11014B_0.eot" />
+    <None Include="template\assets\plugins\flexslider\demo\fonts\webfonts\geo-regular\ttf\11014B_0.ttf" />
+    <None Include="template\assets\plugins\flexslider\demo\fonts\webfonts\geo-regular\woff\11014B_0.woff" />
+    <None Include="template\assets\plugins\flexslider\demo\fonts\webfonts\geo-semibold\eot\style_169898.eot" />
+    <None Include="template\assets\plugins\flexslider\demo\fonts\webfonts\geo-semibold\ttf\style_169898.ttf" />
+    <None Include="template\assets\plugins\flexslider\demo\fonts\webfonts\geo-semibold\woff\style_169898.woff" />
+    <None Include="template\assets\plugins\flexslider\README.mdown" />
+    <None Include="template\assets\plugins\font-awesome\.DS_Store" />
+    <None Include="template\assets\plugins\font-awesome\fonts\fontawesome-webfont.eot" />
+    <None Include="template\assets\plugins\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <None Include="template\assets\plugins\font-awesome\fonts\fontawesome-webfont.woff" />
+    <None Include="template\assets\plugins\font-awesome\fonts\FontAwesome.otf" />
+    <None Include="template\assets\plugins\font-awesome\less\bordered-pulled.less" />
+    <None Include="template\assets\plugins\font-awesome\less\core.less" />
+    <None Include="template\assets\plugins\font-awesome\less\fixed-width.less" />
+    <None Include="template\assets\plugins\font-awesome\less\font-awesome.less" />
+    <None Include="template\assets\plugins\font-awesome\less\icons.less" />
+    <None Include="template\assets\plugins\font-awesome\less\larger.less" />
+    <None Include="template\assets\plugins\font-awesome\less\list.less" />
+    <None Include="template\assets\plugins\font-awesome\less\mixins.less" />
+    <None Include="template\assets\plugins\font-awesome\less\path.less" />
+    <None Include="template\assets\plugins\font-awesome\less\rotated-flipped.less" />
+    <None Include="template\assets\plugins\font-awesome\less\spinning.less" />
+    <None Include="template\assets\plugins\font-awesome\less\stacked.less" />
+    <None Include="template\assets\plugins\font-awesome\less\variables.less" />
+    <None Include="template\assets\plugins\font-awesome\scss\font-awesome.scss" />
+    <None Include="template\assets\plugins\font-awesome\scss\_bordered-pulled.scss" />
+    <None Include="template\assets\plugins\font-awesome\scss\_core.scss" />
+    <None Include="template\assets\plugins\font-awesome\scss\_fixed-width.scss" />
+    <None Include="template\assets\plugins\font-awesome\scss\_icons.scss" />
+    <None Include="template\assets\plugins\font-awesome\scss\_larger.scss" />
+    <None Include="template\assets\plugins\font-awesome\scss\_list.scss" />
+    <None Include="template\assets\plugins\font-awesome\scss\_mixins.scss" />
+    <None Include="template\assets\plugins\font-awesome\scss\_path.scss" />
+    <None Include="template\assets\plugins\font-awesome\scss\_rotated-flipped.scss" />
+    <None Include="template\assets\plugins\font-awesome\scss\_spinning.scss" />
+    <None Include="template\assets\plugins\font-awesome\scss\_stacked.scss" />
+    <None Include="template\assets\plugins\font-awesome\scss\_variables.scss" />
+    <None Include="template\assets\plugins\gmaps\CONTRIBUTING.md" />
+    <None Include="template\assets\plugins\gmaps\README.md" />
+    <None Include="template\assets\plugins\jquery-1.10.2.min.map" />
+    <None Include="template\assets\plugins\revolution_slider\css\.DS_Store" />
+    <None Include="template\assets\plugins\revolution_slider\documentation\.DS_Store" />
+    <None Include="template\assets\plugins\revolution_slider\documentation\assets\js\README.md" />
+    <None Include="template\assets\plugins\revolution_slider\editor\assets\.DS_Store" />
+    <None Include="template\assets\plugins\revolution_slider\editor\type\fontello\fontello-social.eot" />
+    <None Include="template\assets\plugins\revolution_slider\editor\type\fontello\fontello-social.ttf" />
+    <None Include="template\assets\plugins\revolution_slider\editor\type\fontello\fontello-social.woff" />
+    <None Include="template\assets\plugins\revolution_slider\editor\type\fontello\fontello.eot" />
+    <None Include="template\assets\plugins\revolution_slider\editor\type\fontello\fontello.ttf" />
+    <None Include="template\assets\plugins\revolution_slider\editor\type\fontello\fontello.woff" />
+    <None Include="template\assets\plugins\revolution_slider\images\.DS_Store" />
+    <None Include="template\assets\plugins\revolution_slider\rs-plugin\.DS_Store" />
+    <None Include="template\assets\plugins\revolution_slider\rs-plugin\assets\arrows.psd" />
+    <None Include="template\assets\plugins\revolution_slider\rs-plugin\assets\bullets.psd" />
+    <None Include="template\assets\plugins\revolution_slider\rs-plugin\assets\small_arrows.psd" />
+    <None Include="template\assets\plugins\revolution_slider\rs-plugin\css\.DS_Store" />
+    <None Include="template\assets\plugins\revolution_slider\rs-plugin\font\revicons.eot" />
+    <None Include="template\assets\plugins\revolution_slider\rs-plugin\font\revicons.ttf" />
+    <None Include="template\assets\plugins\revolution_slider\rs-plugin\font\revicons.woff" />
+    <None Include="template\assets\plugins\revolution_slider\rs-plugin\js\.DS_Store" />
+    <None Include="template\assets\plugins\revolution_slider\rs-plugin\videojs\.DS_Store" />
+    <None Include="template\assets\plugins\revolution_slider\rs-plugin\videojs\demo.captions.vtt" />
+    <None Include="template\assets\plugins\revolution_slider\rs-plugin\videojs\font\.DS_Store" />
+    <None Include="template\assets\plugins\revolution_slider\rs-plugin\videojs\font\vjs.eot" />
+    <None Include="template\assets\plugins\revolution_slider\rs-plugin\videojs\font\vjs.ttf" />
+    <None Include="template\assets\plugins\revolution_slider\rs-plugin\videojs\font\vjs.woff" />
+    <None Include="template\assets\plugins\uniform\css\uniform.default.scss" />
+    <None Include="template\assets\plugins\uniform\README.textile" />
+    <None Include="resources\misc_psd\Bx_Slider_Control.psd" />
+    <None Include="resources\misc_psd\Logo.psd" />
+    <None Include="resources\misc_psd\Slider_Devices.psd" />
+    <None Include="resources\misc_psd\Testimonial_Corner.psd" />
+    <None Include="resources\photos\Thumbs.db" />
+    <None Include="resources\revolution_slider_doc\.DS_Store" />
+    <None Include="resources\revolution_slider_doc\assets\js\README.md" />
+    <None Include="resources\theme_psd\about-us.psd" />
+    <None Include="resources\theme_psd\blog-item.psd" />
+    <None Include="resources\theme_psd\blog.psd" />
+    <None Include="resources\theme_psd\careers.psd" />
+    <None Include="resources\theme_psd\contact.psd" />
+    <None Include="resources\theme_psd\faq.psd" />
+    <None Include="resources\theme_psd\index.psd" />
+    <None Include="resources\theme_psd\login.psd" />
+    <None Include="resources\theme_psd\prices.psd" />
+    <None Include="resources\theme_psd\services.psd" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\C4H_Service\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>13295</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/C4H_Website</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

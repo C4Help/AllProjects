@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C4H_Webservice", "C4H_Webservice\C4H_Webservice.csproj", "{F1E07FED-8F06-404A-994A-9756712D7440}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C4H_Website", "C4H_Website\C4H_Website.csproj", "{443EFDCF-50C1-4419-B27D-9E83C4D77120}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F1E07FED-8F06-404A-994A-9756712D7440} = {F1E07FED-8F06-404A-994A-9756712D7440}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F1E07FED-8F06-404A-994A-9756712D7440}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1E07FED-8F06-404A-994A-9756712D7440}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1E07FED-8F06-404A-994A-9756712D7440}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1E07FED-8F06-404A-994A-9756712D7440}.Release|Any CPU.Build.0 = Release|Any CPU
+		{443EFDCF-50C1-4419-B27D-9E83C4D77120}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{443EFDCF-50C1-4419-B27D-9E83C4D77120}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{443EFDCF-50C1-4419-B27D-9E83C4D77120}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{443EFDCF-50C1-4419-B27D-9E83C4D77120}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

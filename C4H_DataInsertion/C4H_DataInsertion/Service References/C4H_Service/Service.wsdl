@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost/C4H_Webservice/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost/C4H_Webservice/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/C4H_Webservice/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/C4H_Webservice.Structure" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Service_GetServiceTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceTypes" />
+  </wsdl:message>
+  <wsdl:message name="Service_GetServiceTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service_GetServices_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServices" />
+  </wsdl:message>
+  <wsdl:message name="Service_GetServices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service_GetServicesForSpecificType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServicesForSpecificType" />
+  </wsdl:message>
+  <wsdl:message name="Service_GetServicesForSpecificType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServicesForSpecificTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service_GetUserWatchlist_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserWatchlist" />
+  </wsdl:message>
+  <wsdl:message name="Service_GetUserWatchlist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserWatchlistResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service_AddToUserWatchList_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddToUserWatchList" />
+  </wsdl:message>
+  <wsdl:message name="Service_AddToUserWatchList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddToUserWatchListResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service_RemoveFromUserWatchList_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveFromUserWatchList" />
+  </wsdl:message>
+  <wsdl:message name="Service_RemoveFromUserWatchList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveFromUserWatchListResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service_GetUserServices_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserServices" />
+  </wsdl:message>
+  <wsdl:message name="Service_GetUserServices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserServicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service_AddToUserServicesList_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddToUserServicesList" />
+  </wsdl:message>
+  <wsdl:message name="Service_AddToUserServicesList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddToUserServicesListResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service_RemoveromUserServicesList_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveromUserServicesList" />
+  </wsdl:message>
+  <wsdl:message name="Service_RemoveromUserServicesList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveromUserServicesListResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service_GetCharityDesignations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCharityDesignations" />
+  </wsdl:message>
+  <wsdl:message name="Service_GetCharityDesignations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCharityDesignationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service_GetCharityCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCharityCategories" />
+  </wsdl:message>
+  <wsdl:message name="Service_GetCharityCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCharityCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service_CreateCharityProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCharityProfile" />
+  </wsdl:message>
+  <wsdl:message name="Service_CreateCharityProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCharityProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service_GetCharityProfileByUserID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCharityProfileByUserID" />
+  </wsdl:message>
+  <wsdl:message name="Service_GetCharityProfileByUserID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCharityProfileByUserIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service_GetCharityProfileByUsername_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCharityProfileByUsername" />
+  </wsdl:message>
+  <wsdl:message name="Service_GetCharityProfileByUsername_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCharityProfileByUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service_CreateDonorProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDonorProfile" />
+  </wsdl:message>
+  <wsdl:message name="Service_CreateDonorProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDonorProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service_GetDonorProfileByUsername_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDonorProfileByUsername" />
+  </wsdl:message>
+  <wsdl:message name="Service_GetDonorProfileByUsername_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDonorProfileByUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="Service_SearchCharitiesByQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCharitiesByQuery" />
+  </wsdl:message>
+  <wsdl:message name="Service_SearchCharitiesByQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCharitiesByQueryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Service">
+    <wsdl:operation name="GetServiceTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service/GetServiceTypes" message="tns:Service_GetServiceTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service/GetServiceTypesResponse" message="tns:Service_GetServiceTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServices">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service/GetServices" message="tns:Service_GetServices_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service/GetServicesResponse" message="tns:Service_GetServices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesForSpecificType">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service/GetServicesForSpecificType" message="tns:Service_GetServicesForSpecificType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service/GetServicesForSpecificTypeResponse" message="tns:Service_GetServicesForSpecificType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserWatchlist">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service/GetUserWatchlist" message="tns:Service_GetUserWatchlist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service/GetUserWatchlistResponse" message="tns:Service_GetUserWatchlist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToUserWatchList">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service/AddToUserWatchList" message="tns:Service_AddToUserWatchList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service/AddToUserWatchListResponse" message="tns:Service_AddToUserWatchList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveFromUserWatchList">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service/RemoveFromUserWatchList" message="tns:Service_RemoveFromUserWatchList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service/RemoveFromUserWatchListResponse" message="tns:Service_RemoveFromUserWatchList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserServices">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service/GetUserServices" message="tns:Service_GetUserServices_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service/GetUserServicesResponse" message="tns:Service_GetUserServices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToUserServicesList">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service/AddToUserServicesList" message="tns:Service_AddToUserServicesList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service/AddToUserServicesListResponse" message="tns:Service_AddToUserServicesList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveromUserServicesList">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service/RemoveromUserServicesList" message="tns:Service_RemoveromUserServicesList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service/RemoveromUserServicesListResponse" message="tns:Service_RemoveromUserServicesList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCharityDesignations">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service/GetCharityDesignations" message="tns:Service_GetCharityDesignations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service/GetCharityDesignationsResponse" message="tns:Service_GetCharityDesignations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCharityCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service/GetCharityCategories" message="tns:Service_GetCharityCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service/GetCharityCategoriesResponse" message="tns:Service_GetCharityCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCharityProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service/CreateCharityProfile" message="tns:Service_CreateCharityProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service/CreateCharityProfileResponse" message="tns:Service_CreateCharityProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCharityProfileByUserID">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service/GetCharityProfileByUserID" message="tns:Service_GetCharityProfileByUserID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service/GetCharityProfileByUserIDResponse" message="tns:Service_GetCharityProfileByUserID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCharityProfileByUsername">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service/GetCharityProfileByUsername" message="tns:Service_GetCharityProfileByUsername_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service/GetCharityProfileByUsernameResponse" message="tns:Service_GetCharityProfileByUsername_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDonorProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service/CreateDonorProfile" message="tns:Service_CreateDonorProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service/CreateDonorProfileResponse" message="tns:Service_CreateDonorProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDonorProfileByUsername">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service/GetDonorProfileByUsername" message="tns:Service_GetDonorProfileByUsername_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service/GetDonorProfileByUsernameResponse" message="tns:Service_GetDonorProfileByUsername_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCharitiesByQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/Service/SearchCharitiesByQuery" message="tns:Service_SearchCharitiesByQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/Service/SearchCharitiesByQueryResponse" message="tns:Service_SearchCharitiesByQuery_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_Service" type="tns:Service">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetServiceTypes">
+      <soap:operation soapAction="http://tempuri.org/Service/GetServiceTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServices">
+      <soap:operation soapAction="http://tempuri.org/Service/GetServices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesForSpecificType">
+      <soap:operation soapAction="http://tempuri.org/Service/GetServicesForSpecificType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserWatchlist">
+      <soap:operation soapAction="http://tempuri.org/Service/GetUserWatchlist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToUserWatchList">
+      <soap:operation soapAction="http://tempuri.org/Service/AddToUserWatchList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveFromUserWatchList">
+      <soap:operation soapAction="http://tempuri.org/Service/RemoveFromUserWatchList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserServices">
+      <soap:operation soapAction="http://tempuri.org/Service/GetUserServices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToUserServicesList">
+      <soap:operation soapAction="http://tempuri.org/Service/AddToUserServicesList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveromUserServicesList">
+      <soap:operation soapAction="http://tempuri.org/Service/RemoveromUserServicesList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCharityDesignations">
+      <soap:operation soapAction="http://tempuri.org/Service/GetCharityDesignations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCharityCategories">
+      <soap:operation soapAction="http://tempuri.org/Service/GetCharityCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCharityProfile">
+      <soap:operation soapAction="http://tempuri.org/Service/CreateCharityProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCharityProfileByUserID">
+      <soap:operation soapAction="http://tempuri.org/Service/GetCharityProfileByUserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCharityProfileByUsername">
+      <soap:operation soapAction="http://tempuri.org/Service/GetCharityProfileByUsername" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDonorProfile">
+      <soap:operation soapAction="http://tempuri.org/Service/CreateDonorProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDonorProfileByUsername">
+      <soap:operation soapAction="http://tempuri.org/Service/GetDonorProfileByUsername" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCharitiesByQuery">
+      <soap:operation soapAction="http://tempuri.org/Service/SearchCharitiesByQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="BasicHttpBinding_Service" binding="tns:BasicHttpBinding_Service">
+      <soap:address location="http://localhost/C4H_Webservice/Service.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

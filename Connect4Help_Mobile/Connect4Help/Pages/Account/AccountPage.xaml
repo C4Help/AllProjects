@@ -1,0 +1,84 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Connect4Help.Pages.Account.AccountPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid HorizontalAlignment="Stretch" Height="13" Margin="0,0" VerticalAlignment="Top" Background="#FFD7D5D5"/>
+
+        <Grid x:Name="AccountLayoutRoot" Background="White" Visibility="Collapsed">
+            <TextBlock HorizontalAlignment="Left" Margin="29,32,0,0" 
+                   TextWrapping="Wrap" Text="SIGN OUT" VerticalAlignment="Top"
+                   Foreground="Black" Width="355" FontSize="26"/>
+            <TextBlock HorizontalAlignment="Left" Margin="29,97,0,0" 
+            	TextWrapping="Wrap" Text="You are signed in as:" VerticalAlignment="Top"
+            	Foreground="#FF4F4F4F" Width="355" FontSize="20"/>
+            <TextBlock x:Name="Name_TextBlock" HorizontalAlignment="Left" Margin="29,140,0,0" 
+            	TextWrapping="Wrap" Text="Name" VerticalAlignment="Top"
+            	Foreground="Black"  FontSize="26"/>
+            <Button x:Name="Sign_Out_Button" Content="Sign out" HorizontalAlignment="Stretch" 
+        	Margin="15,200,15,0" VerticalAlignment="Top" BorderBrush="#FF6F6D6D" Foreground="#FFFEB507" Click="Sign_Out_Button_Click" >
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF9283FF" Offset="0"/>
+                        <GradientStop Color="#FF6128E3" Offset="0.552"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </Grid>
+
+        <Grid x:Name="SigninLayoutRoot" Visibility="Visible">
+            <TextBlock HorizontalAlignment="Left" Margin="29,32,0,0" 
+                   TextWrapping="Wrap" Text="SIGN IN TO " VerticalAlignment="Top"
+                   Foreground="Black" Width="144" FontSize="26"/>
+            <TextBox x:Name="Username_Tetxbox" HorizontalAlignment="Stretch" Height="72" 
+                 Margin="15,85,15,0" TextWrapping="Wrap" 
+                 Text="" VerticalAlignment="Top" 
+                  Background="#BFF4F4F4" BorderBrush="#BF000000" GotFocus="Username_Tetxbox_GotFocus" LostFocus="Username_Tetxbox_LostFocus" 
+                 />
+            <PasswordBox x:Name="Password_Password" HorizontalAlignment="Stretch" Height="72" 
+        	    Margin="15,157,15,0" VerticalAlignment="Top"
+                Password="{Binding Text, Mode=TwoWay, ElementName=Password_Textbox}"
+        	    Background="#BFF4F4F4" BorderBrush="#BF000000" GotFocus="Password_Tetxbox_GotFocus" LostFocus="Password_Tetxbox_LostFocus" 
+                 />
+            <TextBox x:Name="Password_Textbox" HorizontalAlignment="Stretch" Height="72" 
+        	    Margin="15,157,15,0" VerticalAlignment="Top"
+                Text="{Binding Passowrd, Mode=TwoWay, ElementName=Password_Password}"
+        	    Background="#BFF4F4F4" BorderBrush="#BF000000" GotFocus="Password_Tetxbox_GotFocus" LostFocus="Password_Tetxbox_LostFocus" 
+                 />
+            <CheckBox x:Name="Show_Password_Checkbox" Content="Show password" HorizontalAlignment="Left" Margin="15,229,0,0" VerticalAlignment="Top" Foreground="Black" BorderBrush="#FFDBD5D5" Checked="Show_Password_Checkbox_Checked" Unchecked="Show_Password_Checkbox_Checked" Background="#FFDB7D3A"/>
+            <Button x:Name="Sign_In_Button" Content="Sign in" HorizontalAlignment="Stretch" 
+                Margin="15,325,15,0" VerticalAlignment="Top" BorderBrush="#FF6F6D6D" Foreground="#FFFEB507" Click="Sign_In_Button_Click" >
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF9283FF" Offset="0"/>
+                        <GradientStop Color="#FF6128E3" Offset="0.552"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button Content="Create Account" HorizontalAlignment="Stretch" 
+        	Margin="15,397,15,0" VerticalAlignment="Top" BorderBrush="#FF6F6D6D" Foreground="#FFFEB507" Click="CreateAccount_Click" >
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF9283FF" Offset="0"/>
+                        <GradientStop Color="#FF6128E3" Offset="0.552"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <TextBlock HorizontalAlignment="Left" Margin="29,489,0,0" TextWrapping="Wrap" Text="Forgot Your Password?" VerticalAlignment="Top" Foreground="#FF00007F" FontSize="30"/>
+            <Image HorizontalAlignment="Left" Height="56" Margin="173,24,0,0" VerticalAlignment="Top" Width="172" Source="/Assets/Logos/logo3.png" Stretch="Fill"/>
+        </Grid>
+    
+    </Grid>
+
+</phone:PhoneApplicationPage>
